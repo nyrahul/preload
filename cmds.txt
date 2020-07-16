@@ -1,0 +1,17 @@
+CFLAGS="-Dconst= \
+        -DLOG_CONF_LEVEL_RPL=LOG_LEVEL_DBG \
+        -DLOG_CONF_LEVEL_MAC=LOG_LEVEL_DBG \
+        -DLOG_CONF_LEVEL_FRAMER=LOG_LEVEL_DBG \
+        -DLOG_CONF_LEVEL_MAIN=LOG_LEVEL_DBG \
+        -DLOG_CONF_LEVEL_NULLNET=LOG_LEVEL_DBG \
+        -DLOG_CONF_LEVEL_6LOWPAN=LOG_LEVEL_DBG \
+        -DLOG_CONF_LEVEL_IPV6=LOG_LEVEL_DBG \
+        -DNETSTACK_CONF_NETWORK=sicslowpan_driver \
+        -Wno-stringop-truncation -Wno-array-bounds" MAKE_MAC=MAKE_MAC_CSMA \
+        make -C examples/rpl-udp/ clean all
+
+CFLAGS="-Dconst= \
+        -DNETSTACK_CONF_NETWORK=sicslowpan_driver \
+        -Wno-stringop-truncation -Wno-array-bounds" MAKE_MAC=MAKE_MAC_CSMA \
+        make -C examples/rpl-udp/ clean all
+
